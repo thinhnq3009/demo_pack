@@ -21,3 +21,5 @@ class WordBag:
     def __getitem__(self, index):
         return self.list_word[index]
 
+    def __len__(self):
+        return len(self.list_word)

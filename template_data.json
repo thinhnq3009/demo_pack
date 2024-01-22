@@ -1,0 +1,153 @@
+[
+  {
+    "tag": "error",
+    "patterns": [],
+    "responses": [
+      "Your question is not clear. Please try again."
+    ]
+  },
+  {
+    "tag": "thông tin",
+    "patterns": [
+      "STI Solutions là gì?"
+    ],
+    "responses": [
+      "Là 1 công ty phần mềm chuyên về AI, web app, mobile app,…,"
+    ]
+  },
+  {
+    "tag": "người đứng đầu",
+    "patterns": [
+      "Người đứng đầu STI là ai?"
+    ],
+    "responses": [
+      "Người đứng đầu của STI Solutions là ông Nguyễn Võ Quang Đông"
+    ]
+  },
+  {
+    "tag": "leader",
+    "patterns": [
+      "Leader của STI là ai?"
+    ],
+    "responses": [
+      "Leader của STI Solutions là ông Thủy Việt Quốc"
+    ]
+  },
+  {
+    "tag": "số điện thoại",
+    "patterns": [
+      "Số điện thoại của công ti STI solutions ?"
+    ],
+    "responses": [
+      "Số điện thoại là 0906.402.469"
+    ]
+  },
+  {
+    "tag": "email",
+    "patterns": [
+      "Email của STI Solutions?"
+    ],
+    "responses": [
+      "Email của công ty là: info@stisolutions.net"
+    ]
+  },
+  {
+    "tag": "địa chỉ",
+    "patterns": [
+      "Địa chỉ của Công ty?"
+    ],
+    "responses": [
+      "Headquarter: 121/6 Hoang Van Thu, Phuoc Ninh Ward, Hai Chau District, Danang City; Hue City Lot A13, Hoang Quoc Viet Street, An Dong Ward, Hue City"
+    ]
+  },
+  {
+    "tag": "nước",
+    "patterns": [
+      "Công ty thuộc nước nào?"
+    ],
+    "responses": [
+      "Công ty thuộc Việt Nam"
+    ]
+  },
+  {
+    "tag": "tầm nhìn",
+    "patterns": [
+      "Tầm nhìn của Cty?"
+    ],
+    "responses": [
+      "STI phấn đấu trở thành người tiên phong trong lĩnh vực công nghệ mới và trở thành nơi của những người đam mê công nghệ, luôn cung cấp các giải pháp giải quyết vấn đề của khách hàng một cách tối ưu và triệt để."
+    ]
+  },
+  {
+    "tag": "sứ mệnh",
+    "patterns": [
+      "Sứ mệnh của công ty?"
+    ],
+    "responses": [
+      "Sứ mệnh của STI là khơi dậy niềm đam mê công nghệ, phát triển toàn diện cho nhân viên và kết nối để tạo ra giá trị cho khách hàng và xã hội."
+    ]
+  },
+  {
+    "tag": "trang web",
+    "patterns": [
+      "Trang facebook của STI?"
+    ],
+    "responses": [
+      "https://www.facebook.com/sti.solutions3008"
+    ]
+  },
+  {
+    "tag": "thành viên",
+    "patterns": [
+      "Công ty có bao nhiêu thành viên?"
+    ],
+    "responses": [
+      "Hơn +5,000 thành viên"
+    ]
+  },
+  {
+    "tag": "web",
+    "patterns": [
+      "Trang web của STI là gì?"
+    ],
+    "responses": [
+      "https://stisolutions.net/"
+    ]
+  },
+  {
+    "tag": "công ty lớn",
+    "patterns": [
+      "Công ty mẹ của STI là cty nào?"
+    ],
+    "responses": [
+      "Công ty mẹ của STI là TAG Ventures"
+    ]
+  },
+  {
+    "tag": "công ty mẹ",
+    "patterns": [
+      "STI có công ty mẹ không?"
+    ],
+    "responses": [
+      "Có, STI là 1 công ty con"
+    ]
+  },
+  {
+    "tag": "khẩu hiệu",
+    "patterns": [
+      "Khẩu hiệu của STI là gì"
+    ],
+    "responses": [
+      "Khẩu hiệu của STI là Our passion - Your business"
+    ]
+  },
+  {
+    "tag": "AI",
+    "patterns": [
+      "Sti có làm về AI không?"
+    ],
+    "responses": [
+      "STI có làm về AI và còn rất pro về chuyện đó"
+    ]
+  }
+]

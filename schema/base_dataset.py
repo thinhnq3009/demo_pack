@@ -1,9 +1,9 @@
-from abc import ABC
+import json
 
 from pydantic import BaseModel, Field
 
 
-class DatasetItem(BaseModel, ABC):
+class DatasetItem(BaseModel):
     tag: str = Field(..., title='Tag', min_length=1)
     patterns: list[str] = Field(..., title='Patterns')
     responses: list[str] = Field(..., title='Responses')
@@ -21,6 +21,9 @@ class DatasetItem(BaseModel, ABC):
 class Dataset:
     def add_item(self, item: DatasetItem):
         self.data.append(item)
+
+    def write(self, path: str):
+        json.dump([i.dict() for i in self.data], open(path, 'w'))
 
     def __init__(self, data: list[DatasetItem] = None):
         self.data = data or []

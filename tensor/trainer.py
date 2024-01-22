@@ -2,7 +2,6 @@
 # py_training
 import pickle
 import random
-from functools import lru_cache
 from typing import Any, Optional
 
 import nltk
@@ -10,25 +9,13 @@ import numpy as np
 from keras.layers import Dense, Dropout
 from keras.models import Sequential
 from keras.optimizers import SGD
-from nltk.stem import WordNetLemmatizer
 from pydantic import BaseModel, Field
 
 from exception.trainer_not_ready_error import TrainerNotReadyError
 from schema.base_dataset import Dataset
 from schema.reader.base_reader import BaseDatasetReader
+from tensor.lemmatizer import lemmatize
 from tensor.word_bag import WordBag
-
-nltk.download('punkt')
-nltk.download('wordnet')
-
-
-@lru_cache()
-def get_lemmatizer() -> WordNetLemmatizer:
-    return WordNetLemmatizer()
-
-
-def lemmatize(word) -> str:
-    return get_lemmatizer().lemmatize(word)
 
 
 class ModelTrainer(BaseModel):
@@ -47,10 +34,12 @@ class ModelTrainer(BaseModel):
     classes_train: Optional[list] = None
     words_train: Optional[list] = None
 
-    __is_numerical: bool = False
+    __is_numerical: bool = False  # Biến này đảm bảo rằng dữ liệu đã được xư lý và chuyển về dạng vector
+    __dataset: Dataset = Dataset()
 
     def read_dateset(self, reader: BaseDatasetReader):
         dataset = reader.read()
+        self.__dataset += dataset
         self.load_dataset(dataset)
 
     def load_dataset(self, dataset: Dataset):
@@ -130,8 +119,10 @@ class ModelTrainer(BaseModel):
 
         if save:
             path += f'/{filename or self.name_model}'
-            self.model.save(f'{path}.keras', hist)
-            pickle.dump(self.words_train, open(f'{path}-words.pkl', 'wb'))
-            pickle.dump(self.classes_train, open(f'{path}-classes.pkl', 'wb'))
+            self.model.save(f'{path}_model.keras', hist)
+            pickle.dump(self.words, open(f'{path}_words.pkl', 'wb'))
+            pickle.dump(self.classes, open(f'{path}_classes.pkl', 'wb'))
+            # write self.dataset to file .json
+            self.__dataset.write(path + "_dataset.json")
 
         return self.model, hist
